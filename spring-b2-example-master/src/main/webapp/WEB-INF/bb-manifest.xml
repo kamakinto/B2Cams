@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.blackboard.com/bb-manifest-plugin"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.blackboard.com/bb-manifest-plugin http://fibbba.medu.com/xsd/bb-manifest-plugin.xsd">
+  <plugin>
+
+    <name value="Blackboard CAMS " />
+    <handle value="B2CAMS" />
+    <description value="An Intergration of CAMS and Blackboard" />
+    <default-locale value="en_US" />
+
+    <version value="1.0" />
+    <requires>
+      <bbversion value="9.1.130000.0" />
+    </requires>
+
+    <vendor>
+      <id value="bb" />
+      <name value="Blackboard Inc." />
+      <url value="http://www.blackboard.com/" />
+      <description value="Blackboard Learn" />
+    </vendor>
+    
+    <application-defs>
+<application handle="B2CAMSapp" type="shared" use-ssl="false" name="B2 CAMS Application" can-allow-guest="true" small-icon="" large-icon="">
+<description>Application installed as part of the sample plugin</description>
+<links>
+<link>
+<type value="system_tool"/>
+<name value="Blackboard CAMS"/>
+<url value="index.jsp"/>
+<description value="Demonstrates adding tools to the system administration tool."/>
+<icons>
+<listitem value="images/icon.gif"/>
+</icons>
+</link>
+</links>
+</application>
+</application-defs>
+    
+    
+    
+    
+    
+
+    <schema-dirs>
+      <schema-dir dir-name="spring" />
+    </schema-dirs>
+
+    <permissions>
+      <permission type="persist" name="*" actions="create,modify,delete,persist" />
+      <permission type="attribute" name="user.*" actions="get,set" />
+      <permission type="java.util.PropertyPermission" name="*" actions="read,write" />
+      <permission type="socket" name="*" actions="connect" />
+      
+      <!-- We need these permissions to allow Spring to auto-discover and wire beans together and Hibernate to interact with objects. -->
+      <permission type="java.lang.reflect.ReflectPermission" name="suppressAccessChecks" />
+      <permission type="java.lang.RuntimePermission" name="accessDeclaredMembers" />
+      <permission type="java.lang.RuntimePermission" name="createClassLoader" />
+      <permission type="java.lang.RuntimePermission" name="setContextClassLoader" />
+      <permission type="java.io.FilePermission" name="${java.home}/lib/*" actions="read" />
+    </permissions>
+
+  </plugin>
+</manifest>
