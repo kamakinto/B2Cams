@@ -1,14 +1,4 @@
-Example Spring B2
+Spring- Blackboard Building Block
 =================
 
-This project is an example Building Block (B2) for Blackboard Learn using the Spring APIs that Blackboard provides for third party developers.  
-
-### Building
-To build the project, just run:
-
-gradlew build
-
-### Deploying
-To deploy the B2 to your Learn server, run:
-
-gradlew -Dserver=host:port deployB2
+This project serves as a blackboard building block that retrieves information from the blackboard database, as well as an external database.
